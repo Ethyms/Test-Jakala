@@ -1,0 +1,11 @@
+contract_after_insert
+CREATE DEFINER = CURRENT_USER TRIGGER `jakalatest`.`contract_BEFORE_UPDATE` BEFORE UPDATE ON `contract` FOR EACH ROW
+BEGIN
+	set new.lastmodifiedon = now();
+END
+
+contract_before_update
+CREATE DEFINER = CURRENT_USER TRIGGER `jakalatest`.`contract_BEFORE_UPDATE` BEFORE UPDATE ON `contract` FOR EACH ROW
+BEGIN
+	set new.lastmodifiedon = now();
+END
